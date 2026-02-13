@@ -30,7 +30,7 @@ def is_strong(password: str) -> bool:
     }
     special_characters: str = "!@#$%&*"
 
-    for char in password:
+    for char in password.strip():
         if char.isupper():
             requirements["has1cap"] = True
         if char.islower():
