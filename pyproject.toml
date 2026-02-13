@@ -1,0 +1,13 @@
+[project]
+name = "password-generator"
+version = "0.1.0"
+description = "Tool to generate strong passwords"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+pythonpath = [
+    "src"
+]
