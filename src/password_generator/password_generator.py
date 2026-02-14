@@ -1,3 +1,8 @@
+import random
+
+
+SPECIAL_CHARACTERS: str = "!@#$%&*"
+
 def is_strong(password: str) -> bool:
     """
     Tests if a password is strong.
@@ -22,13 +27,13 @@ def is_strong(password: str) -> bool:
         - At least 1 digit
         - At least 1 special character (!@#$%&*)
     """
+    global SPECIAL_CHARACTERS
     requirements: dict[str, bool] = {
         "has1cap": False,
         "has1small": False,
         "has1digit": False,
         "has1spec": False,
     }
-    special_characters: str = "!@#$%&*"
 
     for char in password.strip():
         if char.isupper():
@@ -37,8 +42,32 @@ def is_strong(password: str) -> bool:
             requirements["has1small"] = True
         if char.isdigit():
             requirements["has1digit"] = True
-        if char in special_characters:
+        if char in SPECIAL_CHARACTERS:
             requirements["has1spec"] = True
 
     return all(requirements.values())
+
+
+def generate_char() -> str:
+    """
+    Returns a character in upper or lower case.
+
+    Returns:
+        str: Random character in upper or lower case.
+    """
+    lower_alpha: list[str] = [chr(ascii_code) for ascii_code in range(65, 91)]
+    upper_alpha: list[str] = [chr(ascii_code) for ascii_code in range(97, 123)]
+    return random.choice(lower_alpha + upper_alpha)
+
+
+def generate_password() -> str:
+    """
+    Returns a strong password.
+
+    Returns:
+        str: Random generated password.
+    """
+    password: list[str] = ['' for char in range(random.randint(8, 12))]
+    return 
+
 
