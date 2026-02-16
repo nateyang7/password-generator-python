@@ -11,10 +11,10 @@ This project serves as an educative practice for cybersecurity purpose.
 - [Usage](##Usage)
 
 ## Features
-- [] Generate a strong password
+- [X] Generate a strong password
 
 ## Requirements
-None
+- python3
 
 ## Installation
 Clone the repository:
@@ -23,4 +23,8 @@ git clone https://github.com/NateYang7/password-generator-python.git
 ```
 
 ## Usage
-### How to launch it ?
+From the repository:
+```bash
+python3 main.py
+```
+

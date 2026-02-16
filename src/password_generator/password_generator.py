@@ -111,5 +111,3 @@ def generate_password() -> str:
                 )
     return password
 
-
-print(generate_password())
