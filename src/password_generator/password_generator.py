@@ -1,5 +1,4 @@
 import random
-random.seed(0)
 
 SPECIAL_CHARACTERS: str = "!@#$%&*"
 
