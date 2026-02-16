@@ -60,6 +60,40 @@ def generate_char() -> str:
     return random.choice(lower_alpha + upper_alpha)
 
 
+def generate_digit() -> str:
+    """
+    Returns a digit.
+
+    Returns:
+        str: Digit from 0 to 9.
+    """
+    return str(random.randint(0, 10))
+
+
+def generate_special_char() -> str:
+    """
+    Returns a special character.
+
+    Returns:
+        str: Special character.
+    """
+    global SPECIAL_CHARACTERS
+    return random.choice(SPECIAL_CHARACTERS)
+
+
+def generate_passchar() -> str:
+    """
+    Returns a letter, digit or a special character.
+
+    Returns:
+        str: Letter, digit or a special character.
+    """
+    char: str = generate_char()
+    digit: str = generate_digit()
+    special_char: str = generate_special_char()
+    return random.choice((char, digit, special_char))
+
+
 def generate_password() -> str:
     """
     Returns a strong password.
@@ -67,7 +101,13 @@ def generate_password() -> str:
     Returns:
         str: Random generated password.
     """
-    password: list[str] = ['' for char in range(random.randint(8, 12))]
-    return 
-
+    length: int = random.randint(8, 16)
+    password: str = ''.join(
+            char for char in [generate_passchar() for char in range(length)]
+            )
+    while not is_strong(password):
+        password = ''.join(
+                char for char in [generate_passchar() for char in range(length)]
+                )
+    return password
 
