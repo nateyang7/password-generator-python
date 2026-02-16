@@ -1,5 +1,5 @@
 import random
-
+random.seed(0)
 
 SPECIAL_CHARACTERS: str = "!@#$%&*"
 
@@ -48,12 +48,12 @@ def is_strong(password: str) -> bool:
     return all(requirements.values())
 
 
-def generate_char() -> str:
+def generate_letter() -> str:
     """
-    Returns a character in upper or lower case.
+    Returns a letter in upper or lower case.
 
     Returns:
-        str: Random character in upper or lower case.
+        str: Random letter in upper or lower case.
     """
     lower_alpha: list[str] = [chr(ascii_code) for ascii_code in range(65, 91)]
     upper_alpha: list[str] = [chr(ascii_code) for ascii_code in range(97, 123)]
@@ -81,17 +81,17 @@ def generate_special_char() -> str:
     return random.choice(SPECIAL_CHARACTERS)
 
 
-def generate_passchar() -> str:
+def generate_char() -> str:
     """
     Returns a letter, digit or a special character.
 
     Returns:
         str: Letter, digit or a special character.
     """
-    char: str = generate_char()
+    letter: str = generate_letter()
     digit: str = generate_digit()
     special_char: str = generate_special_char()
-    return random.choice((char, digit, special_char))
+    return random.choice((letter, digit, special_char))
 
 
 def generate_password() -> str:
@@ -103,11 +103,13 @@ def generate_password() -> str:
     """
     length: int = random.randint(8, 16)
     password: str = ''.join(
-            char for char in [generate_passchar() for char in range(length)]
+            char for char in [generate_char() for char in range(length)]
             )
     while not is_strong(password):
         password = ''.join(
-                char for char in [generate_passchar() for char in range(length)]
+                char for char in [generate_char() for char in range(length)]
                 )
     return password
 
+
+print(generate_password())
