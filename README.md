@@ -1,8 +1,9 @@
 # Password Generator
 
 ## Introduction
-**password-generator-python** is a utility tool to generate a strong password. 
-This project serves as an educative practice for cybersecurity purpose.
+**password-generator-python** is a utility tool designed to generate strong 
+passwords. This project serves as an educational exercise focused on 
+cybersecurity.
 
 ## Table of contents
 - [Features](##Features)
