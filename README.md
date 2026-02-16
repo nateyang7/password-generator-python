@@ -19,7 +19,7 @@ This project serves as an educative practice for cybersecurity purpose.
 ## Installation
 Clone the repository:
 ```bash
-git clone https://github.com/NateYang7/password-generator-python.git
+git clone https://github.com/nateyang7/password-generator-python.git
 ```
 
 ## Usage
