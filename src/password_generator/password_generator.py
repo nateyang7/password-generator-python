@@ -1,6 +1,6 @@
-import random
+from random import choice, randint
 
-SPECIAL_CHARACTERS: str = "!@#$%&*"
+SPECIAL_CHARACTERS: str = '!@#$%&*'
 
 def is_strong(password: str) -> bool:
     """
@@ -26,7 +26,6 @@ def is_strong(password: str) -> bool:
         - At least 1 digit
         - At least 1 special character (!@#$%&*)
     """
-    global SPECIAL_CHARACTERS
     requirements: dict[str, bool] = {
         "has1cap": False,
         "has1small": False,
@@ -56,7 +55,7 @@ def generate_letter() -> str:
     """
     lower_alpha: list[str] = [chr(ascii_code) for ascii_code in range(65, 91)]
     upper_alpha: list[str] = [chr(ascii_code) for ascii_code in range(97, 123)]
-    return random.choice(lower_alpha + upper_alpha)
+    return choice(lower_alpha + upper_alpha)
 
 
 def generate_digit() -> str:
@@ -66,7 +65,7 @@ def generate_digit() -> str:
     Returns:
         str: Digit from 0 to 9.
     """
-    return str(random.randint(0, 10))
+    return str(randint(0, 10))
 
 
 def generate_special_char() -> str:
@@ -76,8 +75,7 @@ def generate_special_char() -> str:
     Returns:
         str: Special character.
     """
-    global SPECIAL_CHARACTERS
-    return random.choice(SPECIAL_CHARACTERS)
+    return choice(SPECIAL_CHARACTERS)
 
 
 def generate_char() -> str:
@@ -90,7 +88,7 @@ def generate_char() -> str:
     letter: str = generate_letter()
     digit: str = generate_digit()
     special_char: str = generate_special_char()
-    return random.choice((letter, digit, special_char))
+    return choice((letter, digit, special_char))
 
 
 def generate_password() -> str:
@@ -100,7 +98,7 @@ def generate_password() -> str:
     Returns:
         str: Random generated password.
     """
-    length: int = random.randint(8, 16)
+    length: int = randint(8, 16)
     password: str = ''.join(
             char for char in [generate_char() for char in range(length)]
             )

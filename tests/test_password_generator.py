@@ -1,8 +1,8 @@
 import pytest
-import random
-from password_generator.password_generator import *
+from random import seed
+from password_generator import *
 
-random.seed(0)
+seed(0)
 
 def test_is_strong():
     assert is_strong("Qwerty41!")

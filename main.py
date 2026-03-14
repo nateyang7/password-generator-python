@@ -1,4 +1,4 @@
-from src.password_generator.password_generator import *
+from src.password_generator import *
 
 
 def main() -> int:
