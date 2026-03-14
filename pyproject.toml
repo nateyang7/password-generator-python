@@ -1,6 +1,6 @@
 [project]
-name = "password-generator"
-version = "0.1.0"
+name = "password-generator-python"
+version = "1.0.0"
 
 [tool.pytest.ini_options]
 testpaths = [
