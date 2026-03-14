@@ -12,13 +12,13 @@ cybersecurity.
 - [Usage](##Usage)
 
 ## Features
+- [X] Tests if a password is strong
 - [X] Generate a strong password
 
 ## Requirements
 - python3
 
 ## Installation
-Clone the repository:
 ```bash
 git clone https://github.com/nateyang7/password-generator-python.git
 ```
